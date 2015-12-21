@@ -1,2 +1,0 @@
-# platform
-Main Goojibear platform
