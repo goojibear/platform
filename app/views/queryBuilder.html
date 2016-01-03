@@ -1,0 +1,24 @@
+<div style="width:100%;height:60px;display:flex;align-items:center;flex-direction:row;">
+  <div style="margin-right:20px;margin-left:30px;">
+    <label>Show data for:</label>
+  </div>
+  <div style="margin-right:20px;">
+    <ui-select ng-model="queryBuilder.dataType.val" ng-change="queryBuilder.dataTypeChanged()" style="width:200px">
+      <ui-select-match>
+        <span ng-bind="$select.selected.name"></span>
+      </ui-select-match>
+      <ui-select-choices repeat="item in (queryBuilder.itemArray | filter: $select.search) track by item.id">
+        <span ng-bind="item.name"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div>
+    <button ng-click="queryBuilder.getData()">Get Data</button>
+  </div>
+</div>
+<div ng-style="{height: queryBuilder.gridHeight}"
+     ui-grid="queryBuilder.gridData"
+     ui-grid-selection
+     ui-grid-resize-columns
+     ui-grid-exporter
+     class="myGrid"></div>

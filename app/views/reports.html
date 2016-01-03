@@ -1,0 +1,27 @@
+<div style="width:100%;height:60px;display:flex;align-items:center;flex-direction:row;">
+  <div style="margin-right:20px;margin-left:30px;">
+    <label>Show data for the:</label>
+  </div>
+  <div style="margin-right:20px;">
+    <ui-select ng-model="reports.timeSpanType.val" style="width:100px">
+      <ui-select-match>
+        <span ng-bind="$select.selected.name"></span>
+      </ui-select-match>
+      <ui-select-choices repeat="item in (reports.itemArray | filter: $select.search) track by item.id">
+        <span ng-bind="item.name"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="input-group" style="width:250px">
+    <input type="text" class="form-control" id="txbTime" placeholder="Number of Hours\Days">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="reports.getData()">Go!</button>
+      </span>
+  </div>
+</div>
+<div ng-style="{height: reports.gridHeight}"
+     ui-grid="reports.gridData"
+     ui-grid-selection
+     ui-grid-resize-columns
+     ui-grid-exporter
+     class="myGrid"></div>

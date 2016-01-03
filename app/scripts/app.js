@@ -19,21 +19,7 @@ angular
     'ui.grid',
     'ui.grid.selection',
     'ui.grid.resizeColumns',
-    'ui.grid.exporter'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'mainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    'ui.grid.exporter',
+    'ui.select',
+    'ui.router'
+  ]);

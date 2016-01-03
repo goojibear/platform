@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="collapse navbar-collapse">
+  <ul class="nav navbar-nav">
+    <li style="padding-top:10px;padding-right:20px"><img src="./images/logo.png" style="height:30px"></li>
+    <li ui-sref-active="active">
+      <a ui-sref="spa.reports">Reports</a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="spa.dataManagement">Data Management</a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="spa.queryBuilder">Query Builder</a>
+    </li>
+  </ul>
+</nav>
+<div class="main-section">
+  <div ui-view></div>
+</div>
+</div>
